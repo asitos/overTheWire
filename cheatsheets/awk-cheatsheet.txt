@@ -1,0 +1,21 @@
+1. awk (The Column Crusher)
+
+When data is arranged in columns (separated by spaces or tabs), awk is your best friend. It treats each line as a record and each word as a field ($1, $2, $3).
+
+    Extract a specific column:
+
+    awk '{print $2}' file.txt
+
+    (Prints only the second word of every line.)
+
+
+    Search and extract:
+
+    awk '/keyword/ {print $3}' file.txt
+
+    (Finds the line with "keyword" and prints the 3rd word.)
+
+
+    Print the last column (even if line lengths vary):
+
+    awk '{print $NF}' file.txt

@@ -1,0 +1,23 @@
+2. sed (The Stream Editor)
+
+sed is perfect for modifying text on the fly. You'll mostly use it for finding and replacing (substitution).
+
+
+    Basic Find and Replace:
+    Bash
+
+    sed 's/find_this/replace_with_this/' file.txt
+
+
+    Delete a specific word entirely:
+    Bash
+
+    sed 's/annoying_word//g' file.txt
+
+    (The g at the end stands for "global," meaning it will replace every instance on the line, not just the first one).
+
+
+    Print only specific lines (e.g., lines 10 to 15):
+    Bash
+
+    sed -n '10,15p' file.txt

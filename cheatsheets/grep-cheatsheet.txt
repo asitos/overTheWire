@@ -1,0 +1,23 @@
+3. grep (The Filter)
+
+You already know grep, but its flags are what make it powerful for CTFs.
+
+
+    Case-insensitive search:
+    Bash
+
+    grep -i "password" file.txt
+
+
+    Invert match (show everything EXCEPT the keyword):
+    Bash
+
+    grep -v "garbage_data" file.txt
+
+
+    Show lines around the match (Context):
+    Bash
+
+    grep -C 2 "keyword" file.txt
+
+    (Shows the matching line, plus 2 lines above and 2 lines below. You can also use -A 2 for After or -B 2 for Before).
