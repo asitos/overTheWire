@@ -90,3 +90,14 @@ nc localhost 30000
 aaWecNkG4FhxJQxz07uiwzVP6bJiYS65 \\bandit14's pass atm
 ```
 
+### level 15 -> level 16
+
+went through man pages of openssl, especially s_client, was quick compared to last few labs, figured out the -connect host:port thing
+
+this level required me to send the bandit15's pass to port 30001 on localhost using ssl/tls encryption
+
+```bash
+openssl s_client -connect localhost:30001
+# enter the bandit15's pass for stdin
+kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
+```
