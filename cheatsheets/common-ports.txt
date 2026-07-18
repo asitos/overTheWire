@@ -1,12 +1,27 @@
+tcp 0 reserved
 echo 7
 daytime 13
 qotd 17 (Quote of the Day)
 ftp 21
+ssh 22
 telnet 23
 smtp 25 (Simple Mail Transfer, meaning e-mail)
 time 37
-nameserver 53
 nicname 43 (Who Is)
+dns nameserver 53
+dhcp 67,68
 gopher 70
 finger 79
-WWW 80
+http WWW 80/8080
+pop3 110
+nntp 119
+network time protocol 123
+imap 143
+snmp 161
+irc 194
+https 443
+dhcpv6 546, 547
+
+port numbers are 16-bit unsigned integers: 0 to 65535
+registered ports: 1024 to 49151
+dynamic/private ports: 49152 to 65535

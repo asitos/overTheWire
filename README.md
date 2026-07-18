@@ -79,3 +79,14 @@ chmod 700 sshkey.private
 ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
 ```
 
+### level 14 -> level 15
+
+read about ports, localhost, revised ip addresses, tcp and udp protocols, went through the man pages of ssh, netcat, nmap, telnet
+
+this level required me to send the bandit14's pass to port 30000 on localhost, which game me the pass for bandit15
+
+```bash
+nc localhost 30000
+aaWecNkG4FhxJQxz07uiwzVP6bJiYS65 \\bandit14's pass atm
+```
+
