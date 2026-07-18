@@ -64,4 +64,4 @@ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' | awk '{print $4}'
 
 i bruteforced my way into this without realising i can use 'file' to checkout the type of compressed archive it is lol, later made a script to simplify it
 
-(./scripts/solve12.sh)
+![./scripts/solve12.sh](./scripts/solve12.sh)
