@@ -99,5 +99,37 @@ this level required me to send the bandit15's pass to port 30001 on localhost us
 ```bash
 openssl s_client -connect localhost:30001
 # enter the bandit15's pass for stdin
+pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
+```
+
+### level 16 -> level 17
+
+holy shit i went through the whole nmap man page, learnt alot but that took a lot of time, my eyes somehow caught the -sV flag very late, which was required here, but it sent it into a silent stalemate due to how the ssl/tls works on those ports.
+
+this level required me to figure out which ports are open and speak ssl/tls between 31000 to 32000 on localhost, and pass bandit16's password to obtain credentials 
+
+```bash
+nmap -p31000-320000 localhost
+
+# example output
+<!-- Starting Nmap 7.98 ( https://nmap.org ) at 2026-07-18 20:04 +0000 -->
+<!-- Nmap scan report for localhost (127.0.0.1) -->
+<!-- Host is up (0.00014s latency). -->
+<!-- Other addresses for localhost (not scanned): ::1 -->
+<!-- Not shown: 996 closed tcp ports (conn-refused) -->
+<!-- PORT      STATE SERVICE -->
+<!-- 31046/tcp open  unknown -->
+<!-- 31518/tcp open  unknown -->
+<!-- 31691/tcp open  unknown -->
+<!-- 31790/tcp open  unknown -->
+<!-- 31960/tcp open  unknown -->
+<!---->
+# grab these ports and try openssl s_client on each
+openssl s_client -connect localhost:31790 -quiet
+# enter the password
 kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
+
+# ssh private key is sent back from the port, copy it onto system, chmod 700/600 on it, and use it to log into next lab
+
+ssh -i passwords/17sshkey.private -p 2220 bandit17@bandit.labs.overthewire.org
 ```
