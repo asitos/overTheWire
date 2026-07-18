@@ -60,8 +60,21 @@ base64 -d data.txt | awk '{print $4}'
 cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' | awk '{print $4}'
 ```
 
-### Level 12 -> Level 13
+### level 12 -> level 13
 
 i bruteforced my way into this without realising i can use 'file' to checkout the type of compressed archive it is lol, later made a script to simplify it
 
 ![./scripts/solve12.sh](./scripts/solve12.sh)
+
+### level 13 -> level 14
+
+this level required transferring the private ssh key to my local machine, fixing it permissions and using it to log in
+
+```bash
+# on host
+scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
+
+chmod 700 sshkey.private
+
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+```
