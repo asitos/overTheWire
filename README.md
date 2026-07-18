@@ -112,18 +112,18 @@ this level required me to figure out which ports are open and speak ssl/tls betw
 nmap -p31000-320000 localhost
 
 # example output
-<!-- Starting Nmap 7.98 ( https://nmap.org ) at 2026-07-18 20:04 +0000 -->
-<!-- Nmap scan report for localhost (127.0.0.1) -->
-<!-- Host is up (0.00014s latency). -->
-<!-- Other addresses for localhost (not scanned): ::1 -->
-<!-- Not shown: 996 closed tcp ports (conn-refused) -->
-<!-- PORT      STATE SERVICE -->
-<!-- 31046/tcp open  unknown -->
-<!-- 31518/tcp open  unknown -->
-<!-- 31691/tcp open  unknown -->
-<!-- 31790/tcp open  unknown -->
-<!-- 31960/tcp open  unknown -->
-<!---->
+# Starting Nmap 7.98 ( https://nmap.org ) at 2026-07-18 20:04 +0000
+# Nmap scan report for localhost (127.0.0.1)
+# Host is up (0.00014s latency).
+# Other addresses for localhost (not scanned): ::1
+# Not shown: 996 closed tcp ports (conn-refused)
+# PORT      STATE SERVICE
+# 31046/tcp open  unknown
+# 31518/tcp open  unknown
+# 31691/tcp open  unknown
+# 31790/tcp open  unknown
+# 31960/tcp open  unknown
+
 # grab these ports and try openssl s_client on each
 openssl s_client -connect localhost:31790 -quiet
 # enter the password
