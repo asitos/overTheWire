@@ -1,0 +1,12 @@
+echo 7
+daytime 13
+qotd 17 (Quote of the Day)
+ftp 21
+telnet 23
+smtp 25 (Simple Mail Transfer, meaning e-mail)
+time 37
+nameserver 53
+nicname 43 (Who Is)
+gopher 70
+finger 79
+WWW 80
