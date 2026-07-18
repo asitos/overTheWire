@@ -3,7 +3,7 @@ my command-line solutions for the Bandit wargame.
 
 this is fun to do im learning more about text filtering and navigating around a linux system.
 
-using fish as my shell, made custom functions to automate my workflow, can be accessed ![here](scripts/).
+using fish as my shell, made custom functions to automate my workflow, can be accessed ![here](scripts/), with [passwords](passwords/)
 
 ### level 1 -> level 2
 ```bash
