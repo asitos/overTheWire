@@ -87,7 +87,7 @@ this level required me to send the bandit14's pass to port 30000 on localhost, w
 
 ```bash
 nc localhost 30000
-aaWecNkG4FhxJQxz07uiwzVP6bJiYS65 \\bandit14's pass atm
+# enter the current pass for bandit14
 ```
 
 ### level 15 -> level 16
@@ -99,7 +99,6 @@ this level required me to send the bandit15's pass to port 30001 on localhost us
 ```bash
 openssl s_client -connect localhost:30001
 # enter the bandit15's pass for stdin
-pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
 ```
 
 ### level 16 -> level 17
@@ -126,8 +125,7 @@ nmap -p31000-320000 localhost
 
 # grab these ports and try openssl s_client on each
 openssl s_client -connect localhost:31790 -quiet
-# enter the password
-kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
+# enter the password for bandit16
 
 # ssh private key is sent back from the port, copy it onto system, chmod 700/600 on it, and use it to log into next lab
 
@@ -193,6 +191,7 @@ cat /usr/bin/cronjob_bandit22.sh
 # cat /etc/bandit_pass/bandit22 > /tmp/<filename>
 
 cat /tmp/<filename>
+# password output
 ```
 
 ### level 22 -> level 23
