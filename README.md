@@ -164,3 +164,12 @@ a simple bin file was provided to be used to run cmds as another user, we read t
 ./bandit20-do cat /etc/bandit_pass/bandit20
 ```
 
+### level 20 -> level 21
+
+learnt how to spin up background jobs using &, and setup netcat to listen to a specific port for the given binary to read the current pass from, and output the next pass
+
+```bash
+cat /etc/bandit_pass/bandit20 | nc -l -p 9001 &
+./suconnect 9001
+```
+
