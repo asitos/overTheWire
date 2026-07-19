@@ -1,5 +1,5 @@
 # overthewire bandit solutions
-my command-line solutions for the Bandit wargame.
+my command-line solutions for the [bandit wargame](https://overthewire.org/wargames/bandit/bandit0.html).
 
 this is fun to do im learning more about text filtering and navigating around a linux system.
 
@@ -133,3 +133,15 @@ kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
 
 ssh -i passwords/17sshkey.private -p 2220 bandit17@bandit.labs.overthewire.org
 ```
+
+### level 17 -> level 18
+
+read diff man page, the --supress-common-files flag immediately caught my attention
+
+this level required me to compare the only different line btw two files, which is the pass for the next lab
+
+```bash
+diff --suppress-common-files passwords.old passwords.new | awk '/>/ {print $2}'
+```
+
+unfortunately i cant login via ssh to bandit18 because someone edited the .bashrc ;-;
