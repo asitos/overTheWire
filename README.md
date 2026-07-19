@@ -194,3 +194,34 @@ cat /usr/bin/cronjob_bandit22.sh
 
 cat /tmp/<filename>
 ```
+
+### level 22 -> level 23
+
+ezpz, look at /etc/cron.d/, figure out what the script does, pass the next username in the cmd the script uses to send the pass from /etc/bandit_pass/bandit23 to /tmp/<filename>, converts a sentence to md5sums with truncation
+
+```bash
+ls /etc/cron.d/
+# behemoth4_cleanup  cronjob_bandit23  leviathan5_cleanup
+# clean_tmp          cronjob_bandit24  manpage3_resetpw_job
+# cronjob_bandit22   e2scrub_all       otw-tmp-dir
+
+cat /etc/cron.d/cronjob_bandit23
+# @reboot bandit23 /usr/bin/cronjob_bandit23.sh &> /dev/null
+# * * * * * bandit23 /usr/bin/cronjob_bandit23.sh &> /dev/null
+
+cat /usr/bin/cronjob_bandit23.sh
+# #!/bin/bash
+
+# myname=$(whoami)
+# mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+# echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+# cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+# 8ca319486bfbbc3663ea0fbe81326349 # use this filename for /tmp
+
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+# password output
+```
+
