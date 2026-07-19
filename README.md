@@ -334,3 +334,15 @@ pretty easy, a setuid binary is given for us in home dir to run commands as band
 ls -al
 ./bandit27-do cat /etc/bandit_pass/bandit27
 ```
+
+### level 27 -> level 28
+
+already familiar with gith, figured how ports would be included in links, password for the connection was provided
+
+```bash
+git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo
+
+# provide the bandit27 password when prompted
+cd repo
+cat README
+```
