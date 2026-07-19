@@ -173,3 +173,24 @@ cat /etc/bandit_pass/bandit20 | nc -l -p 9001 &
 ./suconnect 9001
 ```
 
+### level 21 -> level 22
+
+read about cron, cronjobs and crontab, i picked up what to do but didnt realise i could just read the tmp files content via cat, thought my tab completion wasnt working because it didnt exit
+
+```bash
+ls /etc/cron.d/
+# behemoth4_cleanup  cronjob_bandit23  leviathan5_cleanup
+# clean_tmp          cronjob_bandit24  manpage3_resetpw_job
+# cronjob_bandit22   e2scrub_all       otw-tmp-dir
+
+cat /etc/cron.d/cronjob_bandit22
+# @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+# * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
+cat /usr/bin/cronjob_bandit22.sh 
+# #!/bin/bash
+# chmod 644 /tmp/<filename>
+# cat /etc/bandit_pass/bandit22 > /tmp/<filename>
+
+cat /tmp/<filename>
+```
