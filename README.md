@@ -1,5 +1,5 @@
 # overthewire bandit solutions
-my command-line solutions for the [bandit wargame](https://overthewire.org/wargames/bandit/bandit0.html).
+my command-line solutions for the [bandit wargame](https://overthewire.org/wargames/bandit/).
 
 this is fun to do im learning more about text filtering and navigating around a linux system.
 
