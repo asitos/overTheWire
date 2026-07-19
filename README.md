@@ -145,3 +145,13 @@ diff --suppress-common-files passwords.old passwords.new | awk '/>/ {print $2}'
 ```
 
 unfortunately i cant login via ssh to bandit18 because someone edited the .bashrc ;-;
+
+### level 18 -> level 19
+
+learnt how ssh works, it spawns a full interactive shell which triggers .bashrc, and we dont spawn the login shell to bypass that
+
+this level had the pass sitting at ~/readme, but without ssh interactive shell login, we directly execute a cmd
+
+```bash
+ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
+```
