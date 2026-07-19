@@ -155,3 +155,12 @@ this level had the pass sitting at ~/readme, but without ssh interactive shell l
 ```bash
 ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
 ```
+
+### level 19 -> level 20
+
+a simple bin file was provided to be used to run cmds as another user, we read the pass file owned by the user bandit20
+
+```bash
+./bandit20-do cat /etc/bandit_pass/bandit20
+```
+
