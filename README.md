@@ -337,7 +337,7 @@ ls -al
 
 ### level 27 -> level 28
 
-already familiar with gith, figured how ports would be included in links, password for the connection was provided
+already familiar with git, figured how ports would be included in links, password for the connection was provided
 
 ```bash
 git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo
@@ -345,4 +345,15 @@ git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/
 # provide the bandit27 password when prompted
 cd repo
 cat README
+```
+
+### level 28 -> level 29
+
+required me to recall the use of git log to checkout previous versions of a file, pretty easy
+```bash
+git clone ssh://bandit28-git@bandit.labs.overthewire.org:2220/home/bandit28-git/repo
+
+cd repo
+# file is README.md, check its version history by
+git log -p
 ```
