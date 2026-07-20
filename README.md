@@ -357,3 +357,20 @@ cd repo
 # file is README.md, check its version history by
 git log -p
 ```
+
+### level 29 -> level 30
+
+atleast now i know how decoys work, lmao
+had to switch horizontally between branches because the pass was said to be not in production, implying that it was not in the master branch, i spent 40 mins trying to figure out the pass in sploits-dev branch which i presume was put as a decoy, while the dev branch had the pass all along.
+
+```bash
+git clone ssh://bandit29-git@bandit.labs.overthewire.org:2220/home/bandit29-git/repo
+git branch -a
+
+# 3 branches, check dev instead of sploits-dev (decoy)
+git checkout dev
+
+git log -p
+# check commits in that branch
+cat README.md
+```
