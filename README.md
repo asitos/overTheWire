@@ -387,7 +387,9 @@ git tag
 git show secret
 ```
 
-### level 31 -> 32
+### level 31 -> level 32
+
+ow this was easy, considering the amount of .gitignore modifications and pushes ive done till date, i should have done it even faster.
 
 ```bash
 git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo
@@ -403,4 +405,14 @@ echo "!key.txt" >> .gitignore
 git add key.txt .gitignore
 git commit -m "bypass wildcard gitignore and add key"
 git push origin master
+```
+
+### level 32 -> level 33
+
+put inside a shell with forced uppercase execution of anything i type, figured using $0 to invoke the current running shell, we escape it, pretty clever.
+
+```bash
+# since all letters are capitalized, we use symbols and numbers to our advantage
+$0
+bash
 ```
