@@ -374,3 +374,16 @@ git log -p
 # check commits in that branch
 cat README.md
 ```
+
+### level 30 -> level 31
+
+i forgot about tags, but now i know that tags can be used to point to any objet, including a raw string like our flag for this level, which is why i was confused after trying to run `git checkout` on that tag.
+
+```bash
+git clone ssh://bandit30-git@bandit.labs.overthewire.org:2220/home/bandit30-git/repo
+
+git tag
+
+git show secret
+```
+
