@@ -387,3 +387,20 @@ git tag
 git show secret
 ```
 
+### level 31 -> 32
+
+```bash
+git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo
+
+cat README.md
+# instructions tell u to push a key.txt with some text given to main branch
+
+echo "May I come in?" > key.txt
+
+# modify .gitignore since it has a *.txt to prevent all .txt files from being pushed
+echo "!key.txt" >> .gitignore
+
+git add key.txt .gitignore
+git commit -m "bypass wildcard gitignore and add key"
+git push origin master
+```
