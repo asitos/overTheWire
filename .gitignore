@@ -1,2 +1,2 @@
-passwords/*
-passwords/*
+bandit/passwords/*
+^passwords/*
